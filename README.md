@@ -25,7 +25,7 @@ Install via pip:
 
 ```bash
 pip install pygame
-
+```
 ---
 📁 Folder Structure
 dino_game/
@@ -51,7 +51,7 @@ dino_game/
 🚀 How to Run
 ```bash
 python dino_game.py
-
+```
 ---
 Jump: SPACE or ↑
 
