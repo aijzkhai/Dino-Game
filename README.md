@@ -25,3 +25,44 @@ Install via pip:
 
 ```bash
 pip install pygame
+
+📁 Folder Structure
+dino_game/
+│
+├── dino_game.py           # Main game code
+├── assets/
+│   ├── dino1.png
+│   ├── dino2.png
+│   ├── cactus1.png
+│   ├── cactus2.png
+│   ├── ground.png
+│   ├── background_day.png
+│   ├── background_night.png
+│   ├── gameover.mp3
+│   ├── jump.mp3
+│   ├── milestone.mp3
+│   └── shield.png
+├── highscore.txt
+└── README.md
+
+🚀 How to Run
+```bash
+python dino_game.py
+
+Jump: SPACE or ↑
+
+Shield: S
+
+Restart: R (after game over)
+
+🔔 Milestone Sound
+A sound will play once when you hit 500 points. You can customize the milestone.mp3 sound in the assets/ folder.
+
+🧠 Credits & Notes
+Created by @aijzkhai05
+
+Inspired by Google Chrome's offline Dino game
+
+Art and sounds are original or sourced from open libraries
+
+Fully beginner-friendly and expandable
