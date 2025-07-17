@@ -28,7 +28,7 @@ bg_night_img = pygame.transform.scale(pygame.image.load("assets/bg_night.png"), 
 # Load sounds
 jump_sound = pygame.mixer.Sound("assets/jump.mp3")
 gameover_sound = pygame.mixer.Sound("assets/gameover.mp3")
-milestone_sound = pygame.mixer.Sound("assets/milestone.mp3")  # NEW!
+milestone_sound = pygame.mixer.Sound("assets/milestone.mp3") 
 
 # Clock and FPS
 clock = pygame.time.Clock()
