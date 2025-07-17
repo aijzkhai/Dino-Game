@@ -26,6 +26,7 @@ Install via pip:
 ```bash
 pip install pygame
 
+---
 📁 Folder Structure
 dino_game/
 │
@@ -45,19 +46,25 @@ dino_game/
 ├── highscore.txt
 └── README.md
 
+---
+
 🚀 How to Run
 ```bash
 python dino_game.py
 
+---
 Jump: SPACE or ↑
 
 Shield: S
 
 Restart: R (after game over)
 
+---
+
 🔔 Milestone Sound
 A sound will play once when you hit 500 points. You can customize the milestone.mp3 sound in the assets/ folder.
 
+---
 🧠 Credits & Notes
 Created by @aijzkhai05
 
