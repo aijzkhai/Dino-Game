@@ -28,7 +28,7 @@ bg_night_img = pygame.transform.scale(pygame.image.load("assets/bg_night.png"), 
 # Load sounds
 jump_sound = pygame.mixer.Sound("assets/jump.mp3")
 gameover_sound = pygame.mixer.Sound("assets/gameover.mp3")
-milestone_sound = pygame.mixer.Sound("assets/milestone.mp3") 
+milestone_sound = pygame.mixer.Sound("assets/milestone.mp3")
 
 # Clock and FPS
 clock = pygame.time.Clock()
@@ -177,8 +177,11 @@ def game():
     ground = Ground()
     cacti = []
     score = 0
-    milestone_played = False  # NEW
+    milestone_cooldown = 0
+    freeze_score = 0
+    score_blinking = False
     font = pygame.font.SysFont(None, 36)
+    game_speed = 5
 
     while True:
         background.update()
@@ -203,6 +206,8 @@ def game():
     while running:
         background.update()
         background.draw()
+        game_speed = min(15, 5 + score // 200)
+        ground.speed = game_speed
         ground.update()
         ground.draw()
 
@@ -227,9 +232,12 @@ def game():
 
         if not cacti or cacti[-1].rect.x < WIDTH - random.randint(300, 500):
             if random.randint(1, 100) < 2:
-                cacti.append(Cactus())
+                cactus = Cactus()
+                cactus.speed = game_speed
+                cacti.append(cactus)
 
         for cactus in list(cacti):
+            cactus.speed = game_speed
             cactus.update()
             cactus.draw()
             if cactus.collide(dino):
@@ -246,13 +254,26 @@ def game():
 
         score += 1
 
-        # NEW: Play milestone sound at 500
-        if score >= 500 and not milestone_played:
+        if score % 500 == 0 and score > 0 and milestone_cooldown == 0:
             milestone_sound.play()
-            milestone_played = True
+            freeze_score = score
+            milestone_cooldown = 60
+            score_blinking = True
 
-        score_text = font.render(f"Score: {score}", True, (0, 0, 0))
-        screen.blit(score_text, (10, 10))
+        if milestone_cooldown > 0:
+            milestone_cooldown -= 1
+        else:
+            score_blinking = False
+
+        score_color = (255, 255, 255) if not background.use_day else (0, 0, 0)
+        if score_blinking:
+            if (pygame.time.get_ticks() // 200) % 2 == 0:
+                score_text = font.render(f"Score: {freeze_score}", True, score_color)
+                screen.blit(score_text, (10, 10))
+        else:
+            score_text = font.render(f"Score: {score}", True, score_color)
+            screen.blit(score_text, (10, 10))
+
         if score > high_score:
             high_score = score
         high_score_text = font.render(f"High Score: {high_score}", True, (100, 100, 100))
