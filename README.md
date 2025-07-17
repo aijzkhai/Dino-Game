@@ -28,6 +28,7 @@ pip install pygame
 ```
 ---
 📁 Folder Structure
+```
 dino_game/
 │
 ├── dino_game.py           # Main game code
@@ -45,14 +46,14 @@ dino_game/
 │   └── shield.png
 ├── highscore.txt
 └── README.md
-
+```
 ---
 
 🚀 How to Run
 ```bash
 python dino_game.py
 ```
----
+
 Jump: SPACE or ↑
 
 Shield: S
