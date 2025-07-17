@@ -41,7 +41,7 @@ This is a pixel-art inspired recreation of the classic **Google Chrome Dino game
   pip install pygame
   ```
 ---
-📁 Folder Structure
+## 📁 Folder Structure
 ```
 dino_game/
 │
@@ -63,7 +63,7 @@ dino_game/
 ```
 ---
 
-🚀 How to Run
+## 🚀 How to Run
 ```bash
 python dino_game.py
 ```
@@ -76,12 +76,12 @@ Restart: R (after game over)
 
 ---
 
-🔔 Milestone Sound
+## 🔔 Milestone Sound
 A sound will play once when you hit 500 points. You can customize the milestone.mp3 sound in the assets/ folder.
 
 ---
-🧠 Credits & Notes
-Created by @aijzkhai05
+## 🧠 Credits & Notes
+Created by **@aijzkhai05**
 
 Inspired by Google Chrome's offline Dino game
 
