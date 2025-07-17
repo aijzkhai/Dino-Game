@@ -35,11 +35,11 @@ This is a pixel-art inspired recreation of the classic **Google Chrome Dino game
   ```
   
 - [Pygame](https://www.pygame.org/)  
-Install via pip:
-
-```bash
-pip install pygame
-```
+  Install via pip:
+  
+  ```bash
+  pip install pygame
+  ```
 ---
 📁 Folder Structure
 ```
