@@ -22,13 +22,18 @@ This is a pixel-art inspired recreation of the classic **Google Chrome Dino game
 - Python 3.7+
 - Set up a virtual environment:
   ### For Windows
+  
+  ```
   python -m venv venv
   venv\Scripts\activate
+  ```
   
   ### For macOS/Linux
+  ```
   python3 -m venv venv
   source venv/bin/activate
-
+  ```
+  
 - [Pygame](https://www.pygame.org/)  
 Install via pip:
 
